@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "athenahq": {
+      "url": "https://api.athenahq.ai/api/mcp"
+    }
+  }
+}

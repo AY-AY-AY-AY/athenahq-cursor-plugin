@@ -1,0 +1,20 @@
+{
+  "name": "athenahq",
+  "version": "1.0.0",
+  "description": "Analyze brand visibility, share of voice, citations, and rankings across AI search platforms with AthenaHQ.",
+  "author": {
+    "name": "AthenaHQ"
+  },
+  "homepage": "https://athenahq.ai",
+  "repository": "https://github.com/AY-AY-AY-AY/athenahq-cursor-plugin",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "athenahq",
+    "geo",
+    "ai-search",
+    "mcp",
+    "share-of-voice"
+  ],
+  "mcpServers": "mcp.json"
+}
