@@ -1,14 +1,17 @@
 ---
 name: athenahq
-description: Report how AI assistants (ChatGPT, Perplexity, Gemini, and others) talk about a brand using AthenaHQ analytics. Trigger for AI search visibility, share of voice, mention or citation rates, ranking position vs competitors, cited sources and pages, tracked prompts, and AI-response sentiment. Do not trigger for traditional SEO (Google organic rankings, keywords, backlinks), for writing or publishing content, or for changing AthenaHQ configuration — the tools are read-only.
+description: Report how AI assistants (ChatGPT, Perplexity, Gemini, and others) talk about a brand using AthenaHQ analytics. Trigger for AI search visibility, share of voice, mention or citation rates, ranking position vs competitors, cited sources and pages, tracked prompts, and AI-response sentiment. Do not trigger for traditional SEO (Google organic rankings, keywords, backlinks). The MCP server also provides write tools gated by the connected user's AthenaHQ role.
 ---
 
 # AthenaHQ: brand visibility in AI search
 
 Use the AthenaHQ MCP tools to answer questions about how AI assistants
-mention, cite, and rank a brand versus its competitors. All tools are
-read-only: they query the user's own AthenaHQ analytics and never change
-anything.
+mention, cite, and rank a brand versus its competitors. The workflows below
+cover the common analytics read path. The MCP server also provides tools that
+create, edit, publish, or delete data and start response runs. For signed-in
+connections, AthenaHQ gates each write by the user's role. See the
+[MCP write tools documentation](https://docs.athenahq.ai/api-reference/mcp#write-tools)
+for the complete list and required permissions.
 
 ## Always resolve the website first
 
@@ -87,10 +90,15 @@ Pick cumulative for "who is winning" comparisons and time series for
   `get_tracked_content` result can simply mean nothing has finished
   generating yet: call `list_content` before reporting a sheet as empty.
 
-## Boundaries
+## Write tools and boundaries
 
-- Never claim to add, edit, or delete anything — no tool can. Point the
-  user to the AthenaHQ dashboard (https://app.athenahq.ai) for
-  configuration changes such as adding competitors or prompts.
+- Treat analytics reads separately from writes. Before creating, editing,
+  publishing, deleting, or starting a response run, state the exact action and
+  invoke the tool only when the user has explicitly requested it.
+- AthenaHQ enforces write permissions from the connected user's role. If a
+  write is denied, explain the required permission and point the user to the
+  AthenaHQ dashboard (https://app.athenahq.ai).
+- Some delete tools are permanent. Never imply that a destructive action can
+  be undone unless the tool result says so.
 - These analytics cover AI assistant answers, not Google organic search.
   Redirect traditional SEO questions instead of answering with these tools.

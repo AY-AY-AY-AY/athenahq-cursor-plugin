@@ -2,7 +2,7 @@
 
 Track how AI assistants mention, cite, and rank your brand and competitors with AthenaHQ.
 
-This is the public Cursor / Grok Bot Marketplace package for AthenaHQ. It mirrors the ChatGPT Apps skill: a skill plus the remote AthenaHQ MCP server.
+This is the public Cursor / Grok Bot Marketplace package for AthenaHQ: a skill plus the remote AthenaHQ MCP server.
 
 ## Install
 
@@ -14,7 +14,9 @@ Once listed, install from the [Cursor Marketplace](https://cursor.com/marketplac
 https://api.athenahq.ai/api/mcp
 ```
 
-Cursor Marketplace installs use the server's OAuth sign-in flow. MCP clients that need an API key can send an `x-api-key` header using a key from [AthenaHQ API settings](https://app.athenahq.ai/settings/api). Do not commit API keys.
+Cursor Marketplace installations use the server's OAuth sign-in flow. The connection provides analytics tools and write tools. Writes are gated by the signed-in user's AthenaHQ role, use the same validation and audit logging as the dashboard, and include permanent delete operations. Review the [write tools and permissions](https://docs.athenahq.ai/api-reference/mcp#write-tools) before using them.
+
+MCP clients that need an API key can send an `x-api-key` header using a key from [AthenaHQ API settings](https://app.athenahq.ai/settings/api). API keys receive write access within their configured scope. Do not commit API keys.
 
 Docs: [AthenaHQ MCP](https://docs.athenahq.ai/api-reference/mcp)
 
