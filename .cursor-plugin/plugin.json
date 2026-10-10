@@ -1,5 +1,6 @@
 {
   "name": "athenahq",
+  "displayName": "AthenaHQ",
   "version": "1.0.0",
   "description": "Analyze brand visibility, share of voice, citations, and rankings across AI search platforms with AthenaHQ.",
   "author": {
@@ -8,7 +9,7 @@
   "homepage": "https://athenahq.ai",
   "repository": "https://github.com/AY-AY-AY-AY/athenahq-cursor-plugin",
   "license": "MIT",
-  "logo": "assets/logo.png",
+  "logo": "https://raw.githubusercontent.com/AY-AY-AY-AY/athenahq-cursor-plugin/main/assets/logo.png",
   "keywords": [
     "athenahq",
     "geo",
